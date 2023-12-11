@@ -1,5 +1,6 @@
 #include <pch.h>
 #include <Maze.h>
+#include <Input.h>
 #include <Screen.h>
 #include <Control.h>
 
@@ -7,6 +8,7 @@ int main() {
     Maze* maze = new Maze(10, 10);
     Screen* screen = new Screen();
     Control control;
+    Input input;
 
     maze->AddStart(3, 0);
     maze->AddPath(3, 1);
@@ -15,8 +17,11 @@ int main() {
     maze->AddPath(5, 2);
     maze->AddEnd(6, 2);
 
-    control.MovePlayer(*maze, SOUTH);
-    control.MovePlayer(*maze, EAST);
+    input.DisplayTutorial();
+
+    control.MovePlayer(*maze, input.Move());
+    control.MovePlayer(*maze, input.Move());
+    control.MovePlayer(*maze, input.Move());
 
     screen->Display(*maze);
 
