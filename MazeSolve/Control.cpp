@@ -1,48 +1,57 @@
 #include "pch.h"
 #include "Control.h"
 
-bool Control::MovePlayer(Maze& maze, Direction direction) const {
-    int new_location_x = 0;
-    int new_location_y = 0;
+Control::Control() : _next_location_x(0), _next_location_y(0)
+{
+}
+
+bool Control::MovePlayer(Maze& maze, Direction direction) {
+    if (!IsMoveAvailable(maze, direction))
+        return false;
+
+    maze._maze[maze._player_y][maze._player_x] = VISITED_PATH;
+
+    maze._player_x = _next_location_x;
+    maze._player_y = _next_location_y;
+
+    maze._maze[_next_location_y][_next_location_x] = PLAYER;
+
+    return true;
+}
+
+bool Control::IsMoveAvailable(Maze& maze, Direction direction) {
     int player_x = maze._player_x;
     int player_y = maze._player_y;
 
     switch (direction) {
     case NORTH:
-        new_location_x = player_x;
-        new_location_y = player_y - 1;
+        _next_location_x = player_x;
+        _next_location_y = player_y - 1;
         break;
 
     case SOUTH:
-        new_location_x = player_x;
-        new_location_y = player_y + 1;
+        _next_location_x = player_x;
+        _next_location_y = player_y + 1;
         break;
 
     case EAST:
-        new_location_x = player_x + 1;
-        new_location_y = player_y;
+        _next_location_x = player_x + 1;
+        _next_location_y = player_y;
         break;
 
     case WEST:
-        new_location_x = player_x - 1;
-        new_location_y = player_y;
+        _next_location_x = player_x - 1;
+        _next_location_y = player_y;
         break;
     }
 
-    if (new_location_x < 0 || new_location_x >= SIZE)
+    if (_next_location_x < 0 || _next_location_x >= SIZE)
         return false;
-    if (new_location_y < 0 || new_location_y >= SIZE)
-        return false;
-
-    if (maze._maze[new_location_y][new_location_x] == WALL)
+    if (_next_location_y < 0 || _next_location_y >= SIZE)
         return false;
 
-    maze._maze[player_y][player_x] = VISITED_PATH;
-
-    maze._player_x = new_location_x;
-    maze._player_y = new_location_y;
-
-    maze._maze[new_location_y][new_location_x] = PLAYER;
+    if (maze._maze[_next_location_y][_next_location_x] == WALL)
+        return false;
 
     return true;
 }
