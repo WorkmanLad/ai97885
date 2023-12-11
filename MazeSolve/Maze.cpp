@@ -4,17 +4,17 @@
 Maze::Maze(int width, int height) : _width(width), _height(height) { }
 
 void Maze::AddPath(int x, int y) {
-    _maze[x][y] = PATH;
+    _maze[y][x] = PATH;
 }
 
 void Maze::AddStart(int x, int y) {
-    _maze[x][y] = START;
+    _maze[y][x] = START;
     _player_x = x;
     _player_y = y;
 }
 
 void Maze::AddEnd(int x, int y) {
-    _maze[x][y] = END;
+    _maze[y][x] = END;
 }
 
 void Maze::MovePlayer(Direction direction) {
@@ -48,13 +48,13 @@ void Maze::MovePlayer(Direction direction) {
     if (new_location_y < 0 || new_location_y >= SIZE)
         return;
 
-    if (_maze[new_location_x][new_location_y] == WALL)
+    if (_maze[new_location_y][new_location_x] == WALL)
         return;
 
-    _maze[_player_x][_player_y] = VISITED_PATH;
+    _maze[_player_y][_player_x] = VISITED_PATH;
 
     _player_x = new_location_x;
     _player_y = new_location_y;
 
-    _maze[_player_x][_player_y] = PLAYER;
+    _maze[_player_y][_player_x] = PLAYER;
 }

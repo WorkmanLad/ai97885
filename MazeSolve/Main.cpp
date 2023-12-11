@@ -6,14 +6,15 @@ int main() {
     Maze* maze = new Maze(10, 10);
     Screen* screen = new Screen();
 
-    maze->AddStart(0, 1);
-    maze->AddPath(1, 1);
-    maze->AddPath(1, 2);
-    maze->AddPath(1, 3);
-    maze->AddPath(2, 3);
-    maze->AddEnd(2, 4);
+    maze->AddStart(3, 0);
+    maze->AddPath(3, 1);
+    maze->AddPath(4, 1);
+    maze->AddPath(5, 1);
+    maze->AddPath(5, 2);
+    maze->AddEnd(6, 2);
 
     maze->MovePlayer(SOUTH);
+    maze->MovePlayer(EAST);
 
     screen->Display(*maze);
 
