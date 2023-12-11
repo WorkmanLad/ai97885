@@ -9,6 +9,8 @@ void Maze::AddPath(int x, int y) {
 
 void Maze::AddStart(int x, int y) {
     _maze[x][y] = START;
+    _player_x = x;
+    _player_y = y;
 }
 
 void Maze::AddEnd(int x, int y) {

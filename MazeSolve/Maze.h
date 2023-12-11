@@ -4,8 +4,17 @@
 enum MapSite {
     WALL = 0,
     PATH,
+    VISITED_PATH,
     START,
-    END
+    END,
+    PLAYER
+};
+
+enum Direction {
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST
 };
 
 class Maze {
@@ -17,7 +26,7 @@ public:
     void AddEnd(int x, int y);
 
 private:
+    int _player_x, _player_y;
     int _width, _height;
     int _maze[30][30] = { 0 };
 };
-
