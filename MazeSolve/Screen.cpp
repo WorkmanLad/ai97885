@@ -2,7 +2,7 @@
 #include "Screen.h"
 #include <Maze.h>
 
-void Screen::Display(Maze& maze) {
+void Screen::Display(Maze& maze) const {
     int tile = 0;
 
     wcout << "Maze:\n";

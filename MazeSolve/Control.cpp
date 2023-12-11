@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Control.h"
 
-bool Control::MovePlayer(Maze& maze, Direction direction) {
+bool Control::MovePlayer(Maze& maze, Direction direction) const {
     int new_location_x = 0;
     int new_location_y = 0;
     int player_x = maze._player_x;

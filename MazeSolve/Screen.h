@@ -3,5 +3,5 @@ class Maze;
 
 class Screen {
 public:
-    void Display(Maze&);
+    void Display(Maze&) const;
 };

@@ -25,10 +25,13 @@ class Maze {
 public:
     Maze(int width, int height);
     void AddPath(int x, int y);
-    void AddStart(int x, int y);
-    void AddEnd(int x, int y);
+    void SetStart(int x, int y);
+    void SetGoal(int x, int y);
+
+    bool ReachedGoal() const;
 
 private:
+    int _goal_x, _goal_y;
     int _player_x, _player_y;
     int _width, _height;
     int _maze[SIZE][SIZE] = { 0 };

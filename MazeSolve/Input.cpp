@@ -1,11 +1,11 @@
 #include "pch.h"
 #include "Input.h"
 
-void Input::DisplayTutorial() {
+void Input::DisplayTutorial() const {
     wcout << "Move player\n0 to North, 1 to South, 2 to East and 3 to west.\n";
 }
 
-Direction Input::Move() {
+Direction Input::Move() const {
     wcout << "Move >> ";
     int direction = -1;
 

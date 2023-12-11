@@ -3,6 +3,6 @@
 
 class Control {
 public:
-    bool MovePlayer(Maze&, Direction);
+    bool MovePlayer(Maze&, Direction) const;
 };
 

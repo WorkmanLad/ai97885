@@ -3,6 +3,6 @@
 
 class Input {
 public:
-    void DisplayTutorial();
-    Direction Move();
+    void DisplayTutorial() const;
+    Direction Move() const;
 };
