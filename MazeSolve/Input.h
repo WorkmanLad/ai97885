@@ -1,5 +1,5 @@
 #pragma once
-#include <Control.h>
+#include <Maze.h>
 
 class Input {
 public:
