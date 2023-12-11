@@ -13,6 +13,8 @@ int main() {
     maze->AddPath(2, 3);
     maze->AddEnd(2, 4);
 
+    maze->MovePlayer(SOUTH);
+
     screen->Display(*maze);
 
     delete screen;

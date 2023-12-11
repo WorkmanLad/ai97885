@@ -6,9 +6,9 @@ void Screen::Display(Maze& maze) {
     int tile = 0;
 
     wcout << "Maze:\n";
-    for (int h = 0; h < maze._height; ++h) {
-        for (int w = 0; w < maze._width; ++w) {
-            tile = maze._maze[h][w];
+    for (int y = 0; y < maze._height; ++y) {
+        for (int x = 0; x < maze._width; ++x) {
+            tile = maze._maze[y][x];
 
             if (tile == WALL)
                 wcout << "#";

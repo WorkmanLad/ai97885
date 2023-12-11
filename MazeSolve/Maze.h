@@ -1,6 +1,8 @@
 #pragma once
 #include <pch.h>
 
+constexpr const int SIZE = 30;
+
 enum MapSite {
     WALL = 0,
     PATH,
@@ -25,8 +27,10 @@ public:
     void AddStart(int x, int y);
     void AddEnd(int x, int y);
 
+    void MovePlayer(Direction);
+
 private:
     int _player_x, _player_y;
     int _width, _height;
-    int _maze[30][30] = { 0 };
+    int _maze[SIZE][SIZE] = { 0 };
 };
