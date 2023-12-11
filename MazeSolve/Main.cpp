@@ -4,7 +4,15 @@
 #include <Screen.h>
 #include <Control.h>
 
+void test1();
+
 int main() {
+    
+
+    return 0;
+}
+
+void test1() {
     Maze* maze = new Maze(10, 10);
     Screen* screen = new Screen();
     Control control;
@@ -29,5 +37,4 @@ int main() {
 
     delete screen;
     delete maze;
-    return 0;
 }
