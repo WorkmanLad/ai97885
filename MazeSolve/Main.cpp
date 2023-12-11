@@ -15,7 +15,9 @@ int main() {
     maze->AddPath(2, 3);
     maze->AddEnd(2, 4);
 
-    screen->Display(*maze);
+    player.SetPosition(1, 1);
+
+    screen->Display(*maze, player);
 
     delete screen;
     delete maze;

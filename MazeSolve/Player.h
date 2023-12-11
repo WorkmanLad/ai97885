@@ -2,6 +2,7 @@
 #include <pch.h>
 
 class Player {
+    friend class Screen;
 public:
     Player();
 
