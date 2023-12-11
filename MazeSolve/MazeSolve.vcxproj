@@ -137,11 +137,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Control.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Control.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Screen.h" />

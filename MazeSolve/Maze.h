@@ -21,13 +21,12 @@ enum Direction {
 
 class Maze {
     friend class Screen;
+    friend class Control;
 public:
     Maze(int width, int height);
     void AddPath(int x, int y);
     void AddStart(int x, int y);
     void AddEnd(int x, int y);
-
-    void MovePlayer(Direction);
 
 private:
     int _player_x, _player_y;
