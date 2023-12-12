@@ -3,11 +3,14 @@
 #include <Input.h>
 #include <Screen.h>
 #include <Control.h>
+#include <MazeLoader.h>
 
 void test1();
 
 int main() {
-    
+    MazeLoader loader;
+
+    loader.Load("Maze1.txt");
 
     return 0;
 }
