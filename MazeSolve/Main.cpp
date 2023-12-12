@@ -9,8 +9,11 @@ void test1();
 
 int main() {
     MazeLoader loader;
+    Screen* screen = new Screen();
 
-    loader.Load("Maze1.txt");
+    Maze* maze = loader.Load("Maze3.txt");
+
+    screen->Display(*maze);
 
     return 0;
 }

@@ -2,24 +2,48 @@
 #include "MazeLoader.h"
 #include <Maze.h>
 
-bool MazeLoader::Load(const char* filename) {
+Maze* MazeLoader::Load(const char* filename) {
     ifstream stream(filename, ios::in);
 
     if (!stream)
-        return false;
+        return nullptr;
 
     int width = 0;
     int height = 0;
     char c;
+    
     GetWidthAndHeight(filename, width, height);
+
+    Maze* maze = new Maze(width, height);
+    int x = 0;
+    int y = 0;
 
     while (!stream.eof()) {
         stream.read(&c, 1);
-        cout << c;
+        
+        if (c == '#') {
+            ++x;
+            continue;
+        }
+
+        else if (c == ' ')
+            maze->AddPath(x, y);
+        else if (c == 'A')
+            maze->SetStart(x, y);
+        else if (c == 'B')
+            maze->SetGoal(x, y);
+
+        else if (c == '\n') {
+            x = 0;
+            ++y;
+            continue;
+        }
+
+        ++x;
     }
 
     stream.close();
-    return true;
+    return maze;
 }
 
 void MazeLoader::GetWidthAndHeight(const char* filename, int& width, int& height) {

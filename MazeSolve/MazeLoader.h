@@ -1,8 +1,9 @@
 #pragma once
+class Maze;
 
 class MazeLoader {
 public:
-    bool Load(const char* filename);
+    Maze* Load(const char* filename);
 
 private:
     void GetWidthAndHeight(const char*, int& width, int& height);
