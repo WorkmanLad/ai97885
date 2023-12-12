@@ -9,12 +9,20 @@ void test1();
 
 int main() {
     MazeLoader loader;
+    Input input;
+    Control control;
     Screen* screen = new Screen();
+    Maze* maze = loader.Load("Maze4.txt");
 
-    Maze* maze = loader.Load("Maze3.txt");
+    input.DisplayTutorial();
 
-    screen->Display(*maze);
+    while (!maze->ReachedGoal()) {
+        screen->Display(*maze);
+        control.MovePlayer(*maze, input.Move());
+    }
 
+    delete maze;
+    delete screen;
     return 0;
 }
 

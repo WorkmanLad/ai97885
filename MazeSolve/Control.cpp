@@ -45,9 +45,9 @@ bool Control::IsMoveAvailable(Maze& maze, Direction direction) {
         break;
     }
 
-    if (_next_location_x < 0 || _next_location_x >= SIZE)
+    if (_next_location_x < 0 || _next_location_x >= maze._width)
         return false;
-    if (_next_location_y < 0 || _next_location_y >= SIZE)
+    if (_next_location_y < 0 || _next_location_y >= maze._height)
         return false;
 
     if (maze._maze[_next_location_y][_next_location_x] == WALL)

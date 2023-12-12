@@ -15,7 +15,7 @@ void Screen::Display(Maze& maze) const {
             else if (tile == PLAYER)
                 wcout << "P";
             else if (tile == PATH)
-                wcout << "_";
+                wcout << " ";
             else if (tile == VISITED_PATH)
                 wcout << "v";
             else if (tile == START)
