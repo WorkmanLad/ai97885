@@ -9,17 +9,10 @@ void test1();
 
 int main() {
     MazeLoader loader;
-    Input input;
-    Control control;
     Screen* screen = new Screen();
-    Maze* maze = loader.Load("Maze4.txt");
+    Maze* maze = loader.Load("Maze5.txt");
 
-    input.DisplayTutorial();
-
-    while (!maze->ReachedGoal()) {
-        screen->Display(*maze);
-        control.MovePlayer(*maze, input.Move());
-    }
+    screen->Display(*maze, false);
 
     delete maze;
     delete screen;
@@ -39,14 +32,14 @@ void test1() {
     maze->AddPath(5, 2);
     maze->SetGoal(6, 2);
 
-    screen->Display(*maze);
+    screen->Display(*maze, false);
     wcout << endl;
     input.DisplayTutorial();
 
     while (!maze->ReachedGoal()) {
         control.MovePlayer(*maze, input.Move());
         wcout << "\n";
-        screen->Display(*maze);
+        screen->Display(*maze, true);
     }
 
     delete screen;

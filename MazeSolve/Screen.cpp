@@ -2,7 +2,7 @@
 #include "Screen.h"
 #include <Maze.h>
 
-void Screen::Display(Maze& maze) const {
+void Screen::Display(Maze& maze, bool showAllVisitedPaths = false) const {
     int tile = 0;
 
     wcout << "Maze:\n";
@@ -16,12 +16,16 @@ void Screen::Display(Maze& maze) const {
                 wcout << "P";
             else if (tile == PATH)
                 wcout << " ";
-            else if (tile == VISITED_PATH)
-                wcout << "v";
+            else if (tile == SOLUTION)
+                wcout << "*";
             else if (tile == START)
                 wcout << "S";
             else if (tile == END)
                 wcout << "X";
+
+            if (showAllVisitedPaths)
+                if (tile == VISITED_PATH)
+                    wcout << "w";
         }
         wcout << "\n";
     }

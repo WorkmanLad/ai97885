@@ -62,5 +62,6 @@
     <Text Include="Maze4.txt">
       <Filter>Pre-built Mazes</Filter>
     </Text>
+    <Text Include="Maze5.txt" />
   </ItemGroup>
 </Project>

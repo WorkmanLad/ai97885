@@ -9,7 +9,8 @@ enum MapSite {
     VISITED_PATH,
     START,
     END,
-    PLAYER
+    PLAYER,
+    SOLUTION
 };
 
 enum Direction {
@@ -27,6 +28,7 @@ public:
     void AddPath(int x, int y);
     void SetStart(int x, int y);
     void SetGoal(int x, int y);
+    void SetSolution(int x, int y);
 
     bool ReachedGoal() const;
 

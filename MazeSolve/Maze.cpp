@@ -20,6 +20,10 @@ void Maze::SetGoal(int x, int y) {
     _goal_y = y;
 }
 
+void Maze::SetSolution(int x, int y) {
+    _maze[y][x] = SOLUTION;
+}
+
 bool Maze::ReachedGoal() const {
     return _player_x == _goal_x && _player_y == _goal_y;
 }
