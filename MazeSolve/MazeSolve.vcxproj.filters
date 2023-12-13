@@ -30,6 +30,18 @@
     <ClCompile Include="MazeLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DFSFrontier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BFSFrontier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeSolve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -48,6 +60,21 @@
     <ClInclude Include="MazeLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Frontier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DFSFrontier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BFSFrontier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeSolve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Maze1.txt">
@@ -62,6 +89,8 @@
     <Text Include="Maze4.txt">
       <Filter>Pre-built Mazes</Filter>
     </Text>
-    <Text Include="Maze5.txt" />
+    <Text Include="Maze5.txt">
+      <Filter>Pre-built Mazes</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -10,8 +10,8 @@ void Maze::AddPath(int x, int y) {
 
 void Maze::SetStart(int x, int y) {
     _maze[y][x] = START;
-    _player_x = x;
-    _player_y = y;
+    _player_x = _start_x = x;
+    _player_y = _start_y = y;
 }
 
 void Maze::SetGoal(int x, int y) {
@@ -22,6 +22,10 @@ void Maze::SetGoal(int x, int y) {
 
 void Maze::SetSolution(int x, int y) {
     _maze[y][x] = SOLUTION;
+}
+
+pair<int, int> Maze::GetPlayerPos() {
+    return make_pair(_player_x, _player_y);
 }
 
 bool Maze::ReachedGoal() const {
