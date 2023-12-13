@@ -8,7 +8,9 @@ public:
     DFSFrontier();
 
     virtual bool IsEmpty() override;
-    virtual bool ContainsState(Node*) override;
     virtual void AddNode(Node*) override;
     virtual Node* RemoveNode() override;
+
+private:
+    vector<Node*> _frontier;
 };

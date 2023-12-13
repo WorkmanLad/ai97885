@@ -9,9 +9,15 @@ Node* BFSFrontier::RemoveNode() {
     if (_frontier.empty())
         return nullptr;
 
-    vector<Node*>::iterator i;
-
     Node* node = _frontier.front();
-    _frontier.erase(i);
+    _frontier.pop_front();
     return node;
+}
+
+bool BFSFrontier::IsEmpty() {
+    return _frontier.empty();
+}
+
+void BFSFrontier::AddNode(Node* n) {
+    _frontier.emplace_back(n);
 }

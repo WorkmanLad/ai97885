@@ -2,11 +2,12 @@
 #include <MazeSolve.h>
 #include <Screen.h>
 #include <DFSFrontier.h>
+#include <BFSFrontier.h>
 
 int main() {
     Screen screen;
     MazeSolve solve;
-    DFSFrontier frontier;
+    BFSFrontier frontier;
 
     wcout << "Solving...\n";
     Maze* maze = solve.Solve("Maze2.txt", frontier);
