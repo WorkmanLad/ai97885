@@ -9,9 +9,9 @@ enum MapSite {
     VISITED_PATH,
     START,
     END,
-    PLAYER
+    PLAYER,
+    SOLUTION
 };
-
 enum Direction {
     NORTH,
     SOUTH,
@@ -27,11 +27,17 @@ public:
     void AddPath(int x, int y);
     void SetStart(int x, int y);
     void SetGoal(int x, int y);
+    void SetSolution(int x, int y);
+
+    pair<int, int> GetPlayerPos();
+    int GetWidth() const { return _width; }
+    int GetHeight() const { return _height; }
 
     bool ReachedGoal() const;
 
 private:
     int _goal_x, _goal_y;
+    int _start_x, _start_y;
     int _player_x, _player_y;
     int _width, _height;
     int _maze[SIZE][SIZE] = { 0 };

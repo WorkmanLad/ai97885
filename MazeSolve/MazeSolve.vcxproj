@@ -137,18 +137,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BFSFrontier.cpp" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="DFSFrontier.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeLoader.cpp" />
+    <ClCompile Include="MazeSolve.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BFSFrontier.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="DFSFrontier.h" />
+    <ClInclude Include="Frontier.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeLoader.h" />
+    <ClInclude Include="MazeSolve.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Screen.h" />
   </ItemGroup>
@@ -156,6 +165,8 @@
     <Text Include="Maze1.txt" />
     <Text Include="Maze2.txt" />
     <Text Include="Maze3.txt" />
+    <Text Include="Maze4.txt" />
+    <Text Include="Maze5.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
