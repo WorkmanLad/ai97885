@@ -8,10 +8,11 @@ public:
     ~Game();
 
     boardstate InitialState();
-    TileType Player(boardstate& state) const;
-    set<int> Actions(boardstate& state) const;
-    boardstate Result(boardstate& state, int actionPosition) const;
-    TileType Winner(boardstate& state);
+    TileType Player(boardstate&) const;
+    set<int> Actions(boardstate&) const;
+    boardstate Result(boardstate&, int actionPosition) const;
+    TileType Winner(boardstate&);
+    bool Terminal(boardstate&);
 
 private:
     Board* _initialState;

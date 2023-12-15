@@ -75,3 +75,23 @@ TileType Game::Winner(boardstate& s) {
 
     return EMPTY;
 }
+
+bool Game::Terminal(boardstate& state) {
+    bool ended = false;
+    for (auto s : state) {
+        if (s == EMPTY) {
+            ended = false;
+            break;
+        }
+
+        ended = true;
+    }
+    
+    TileType winner = Winner(state);
+    if (winner == X)
+        ended = true;
+    else if (winner == O)
+        ended = true;
+
+    return ended;
+}
