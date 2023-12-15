@@ -41,7 +41,7 @@ static void Players(Game& game, boardstate& state) {
     cout << endl;
 }
 static void Actions(Game& game, boardstate& state) {
-    cout << "Available moves: ";
+    cout << "Available move positions: ";
     set<int> moves = game.Actions(state);
     for (auto i : moves) {
         cout << i << " ";
