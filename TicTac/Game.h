@@ -11,6 +11,7 @@ public:
     TileType Player(boardstate& state) const;
     set<int> Actions(boardstate& state) const;
     boardstate Result(boardstate& state, int actionPosition) const;
+    TileType Winner(boardstate& state);
 
 private:
     Board* _initialState;

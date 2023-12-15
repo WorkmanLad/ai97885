@@ -59,3 +59,19 @@ boardstate Game::Result(boardstate& state, int actionPosition) const {
     resultBoard[actionPosition] = Player(state);
     return resultBoard;
 }
+
+TileType Game::Winner(boardstate& s) {
+    if (s[0] != EMPTY)
+        if ((s[0] == s[1] and s[0] == s[2]) or (s[0] == s[3] and s[0] == s[6]) or (s[0] == s[4] and s[0] == s[8]))
+            return TileType(s[0]);
+
+    if (s[8] != EMPTY)
+        if ((s[8] == s[7] and s[8] == s[6]) or (s[8] == s[5] and s[8] == s[2]))
+            return TileType(s[8]);
+
+    if (s[4] != EMPTY)
+        if ((s[4] == s[3] and s[4] == s[5]) or (s[4] == s[1] and s[4] == s[7]))
+            return TileType(s[4]);
+
+    return EMPTY;
+}
