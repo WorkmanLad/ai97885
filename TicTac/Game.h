@@ -13,6 +13,7 @@ public:
     boardstate Result(boardstate&, int actionPosition) const;
     TileType Winner(boardstate&);
     bool Terminal(boardstate&);
+    int Utility(boardstate&);
 
 private:
     Board* _initialState;

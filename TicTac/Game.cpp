@@ -95,3 +95,7 @@ bool Game::Terminal(boardstate& state) {
 
     return ended;
 }
+
+int Game::Utility(boardstate& s){
+    return Winner(s);
+}

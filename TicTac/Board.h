@@ -2,7 +2,7 @@
 #include <pch.h>
 
 enum TileType {
-    EMPTY, X, O
+    EMPTY = 0, X = 1, O = -1
 };
 
 class Board {

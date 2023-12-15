@@ -12,25 +12,23 @@ int main() {
     Board board;
 
     boardstate state = board.GetBoard();
-    state[0] = O;
-    state[1] = X;
-    state[2] = X;
-
-    state[3] = X;
-    state[4] = O;
-    state[5] = O;
-
-    state[6] = X;
-    state[7] = O;
+    state[3] = state[6] = state[5] = state[7] = O;
+    state[0] = state[1] = state[2] = state[5] = state[8] = X;
 
     Players(game, state);
     Actions(game, state);
-    Results(game, state, 8);
+    //Results(game, state, 8);
     Winners(game, state);
 
-    cout << "Game ended: " << (game.Terminal(state) ? "true" : "false");
+    bool ended = game.Terminal(state);
+    cout << "Game ended: " << (ended ? "true" : "false");
     cout << endl;
 
+    if (ended) {
+        int utility = game.Utility(state);
+        cout << "Utility: " << utility << endl;
+    }
+    
     return 0;
 }
 
