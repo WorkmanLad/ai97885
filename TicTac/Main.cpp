@@ -4,7 +4,7 @@
 int main() {
     Board board;
 
-    statetype state = board.GetBoard();
+    boardstate state = board.GetBoard();
 
     cout << "State: ";
     if (state[0] == EMPTY)

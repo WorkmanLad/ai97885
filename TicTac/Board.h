@@ -8,8 +8,8 @@ enum TileType {
 class Board {
 public:
     void AddPiece(TileType, int pos);
-    statetype GetBoard() const { return _board; }
+    boardstate GetBoard() const { return _board; }
 
 private:
-    statetype _board = { 0 };
+    boardstate _board = { 0 };
 };

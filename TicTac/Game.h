@@ -4,9 +4,11 @@
 
 class Game {
 public:
-    statetype InitialState() const { return board.GetBoard(); }
+    Game();
+    ~Game();
+    boardstate InitialState();
 
 private:
-    Board board;
+    Board* _initialState;
 };
 

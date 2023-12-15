@@ -6,4 +6,4 @@
 using std::cout, std::cin, std::endl;
 using std::array;
 
-#define statetype array<int, 8>
+#define boardstate array<int, 8>
