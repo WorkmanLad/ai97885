@@ -9,16 +9,20 @@ int main() {
     boardstate state = board.GetBoard();
     state[1] = X;
 
-    cout << "State: ";
-    if (state[0] == EMPTY)
-        cout << "EMPTY" << endl;
-
+    // PLAYER
     cout << "Player: ";
     if (game.player(state) == PlayerX)
         cout << "X";
     else
         cout << "O";
+    cout << endl;
 
+    // ACTIONS
+    cout << "Available moves: ";
+    set<int> moves = game.actions(state);
+    for (auto i : moves) {
+        cout << i << " ";
+    }
     cout << endl;
 
     return 0;

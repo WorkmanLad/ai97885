@@ -12,7 +12,8 @@ public:
     ~Game();
 
     boardstate initialState();
-    Player player(boardstate& state);
+    Player player(boardstate& state) const;
+    set<int> actions(boardstate& state) const;
 
 private:
     Board* _initialState;

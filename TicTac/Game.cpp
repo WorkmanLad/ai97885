@@ -20,7 +20,7 @@ boardstate Game::initialState() {
     return _initialState->GetBoard();
 }
 
-Player Game::player(boardstate& state) {
+Player Game::player(boardstate& state) const {
     int xCount = 0;
     int oCount = 0;
 
@@ -35,4 +35,17 @@ Player Game::player(boardstate& state) {
         return PlayerX;
 
     return PlayerO;
+}
+
+set<int> Game::actions(boardstate& state) const {
+    set<int> availableMoves = { };
+    int count = 0;
+
+    for (auto i : state) {
+        if (i == EMPTY)
+            availableMoves.emplace(count);
+        ++count;
+    }
+
+    return availableMoves;
 }

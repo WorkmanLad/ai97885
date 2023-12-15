@@ -2,8 +2,9 @@
 
 #include <iostream>
 #include <array>
+#include <set>
 
 using std::cout, std::cin, std::endl;
-using std::array;
+using std::array, std::set;
 
-#define boardstate array<int, 8>
+#define boardstate array<int, 9>
