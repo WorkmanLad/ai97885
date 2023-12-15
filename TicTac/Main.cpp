@@ -2,6 +2,10 @@
 #include <Game.h>
 #include <Board.h>
 
+void Players(Game&, boardstate&);
+void Actions(Game&, boardstate&);
+void Results(Game&, boardstate&, int);
+
 int main() {
     Game game;
     Board board;
@@ -9,21 +13,42 @@ int main() {
     boardstate state = board.GetBoard();
     state[1] = X;
 
-    // PLAYER
+    Players(game, state);
+    Actions(game, state);
+    Results(game, state, 4);
+
+    return 0;
+}
+
+static void Players(Game& game, boardstate& state) {
     cout << "Player: ";
-    if (game.player(state) == PlayerX)
+    if (game.Player(state) == X)
         cout << "X";
     else
         cout << "O";
     cout << endl;
+}
 
-    // ACTIONS
+static void Actions(Game& game, boardstate& state) {
     cout << "Available moves: ";
-    set<int> moves = game.actions(state);
+    set<int> moves = game.Actions(state);
     for (auto i : moves) {
         cout << i << " ";
     }
     cout << endl;
+}
 
-    return 0;
+static void Results(Game& game, boardstate& state, int actionPosition) {
+    cout << "Results after playing on position " << actionPosition << ":\n";
+    boardstate s = game.Result(state, actionPosition);
+    int count = 0;
+    for (auto i : s) {
+        cout << i << " ";
+        if (++count == 3) {
+            count = 0;
+            cout << "\n";
+        }
+    }
+        
+    cout << endl;
 }

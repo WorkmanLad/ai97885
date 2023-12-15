@@ -12,7 +12,7 @@ Game::~Game() {
     _initialState = 0;
 }
 
-boardstate Game::initialState() {
+boardstate Game::InitialState() {
     if (_initialState != nullptr)
         delete _initialState;
 
@@ -20,7 +20,7 @@ boardstate Game::initialState() {
     return _initialState->GetBoard();
 }
 
-Player Game::player(boardstate& state) const {
+TileType Game::Player(boardstate& state) const {
     int xCount = 0;
     int oCount = 0;
 
@@ -32,12 +32,12 @@ Player Game::player(boardstate& state) const {
     }
 
     if (oCount == xCount)
-        return PlayerX;
+        return X;
 
-    return PlayerO;
+    return O;
 }
 
-set<int> Game::actions(boardstate& state) const {
+set<int> Game::Actions(boardstate& state) const {
     set<int> availableMoves = { };
     int count = 0;
 
@@ -48,4 +48,14 @@ set<int> Game::actions(boardstate& state) const {
     }
 
     return availableMoves;
+}
+
+boardstate Game::Result(boardstate& state, int actionPosition) const {
+    if (state[actionPosition] != EMPTY)
+        throw;
+
+    boardstate resultBoard = state;
+
+    resultBoard[actionPosition] = Player(state);
+    return resultBoard;
 }

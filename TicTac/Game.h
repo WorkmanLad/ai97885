@@ -2,18 +2,15 @@
 #include <pch.h>
 #include <Board.h>
 
-enum Player {
-    PlayerX, PlayerO
-};
-
 class Game {
 public:
     Game();
     ~Game();
 
-    boardstate initialState();
-    Player player(boardstate& state) const;
-    set<int> actions(boardstate& state) const;
+    boardstate InitialState();
+    TileType Player(boardstate& state) const;
+    set<int> Actions(boardstate& state) const;
+    boardstate Result(boardstate& state, int actionPosition) const;
 
 private:
     Board* _initialState;
